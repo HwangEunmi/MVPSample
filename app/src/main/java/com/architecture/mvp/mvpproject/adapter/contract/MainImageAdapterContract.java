@@ -32,3 +32,4 @@ public interface MainImageAdapterContract {
 // 즉,
 // View -> Presenter -> Model -> Presenter -> View -> Adapter 에서
 // View -> Presenter -> Model -> Presenter -> Adapter 로 흐름이 변경된다.
+
