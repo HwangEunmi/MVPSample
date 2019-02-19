@@ -8,14 +8,14 @@ import java.util.List;
 // Adapter에 대한 메소드
 public interface MainImageAdapterContract {
     // View에서 사용되는 메소드
-    public interface View {
+    interface View {
         void setOnItemClickListener(OnItemClickListener listener); // ViewHolder에 넘겨줄 클릭 리스너를 셋팅한다. (Presenter에서 구현한)
 
         void notifyData(); // 데이터를 갱신한다.
     }
 
     // Model에서 사용되는 메소드
-    public interface Model {
+    interface Model {
         void addList(List<MainImageData> list);
 
         void addItems(MainImageData data); // 데이터를 추가한다.
@@ -33,3 +33,6 @@ public interface MainImageAdapterContract {
 // View -> Presenter -> Model -> Presenter -> View -> Adapter 에서
 // View -> Presenter -> Model -> Presenter -> Adapter 로 흐름이 변경된다.
 
+// 또한, Adapter의 Contract가 View와 Model 두가지인 이유는
+// interface View : 클릭 리스너 등, View와 관련된 메소드를 구현한다.
+// interface Model : DB에서 데이터를 가져와서 갱신하는 등, Model과 관련된 메소드를 구현한다.
